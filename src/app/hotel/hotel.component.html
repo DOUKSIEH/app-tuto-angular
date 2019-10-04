@@ -18,7 +18,23 @@
    <div class="container mx-5">
         <h2> $Event </h2>
         <h3>Veuillez saisir votre nom: </h3>
-        <input type="text" class="form-control" (input)="OnEcrirNom($event)">
+        <input type="text" name = 'word' class="form-control" (input)="OnEcrirNom($event)">
         <p> Vous avez tapez: <span style="color:blue">{{NomClient}}</span></p>
     </div>
+    <div class="container mx-5">
+            <h2> Binding Bidirectionnel [(ngModel)]</h2>
+            <p>Cet input utilise ngModel : </p>
+            <input type="text"  class="form-control" [(ngModel)]="nombrePersonnes">
+            <p> Nombre des personnes: <span style="color:blue">{{nombrePersonnes}}</span></p>
+    </div>
+    <div class="container mx-5">
+        <h2>classBinding</h2>
+        <div [class.my-class]="isClassVisible">
+            Vous pouvez changer la couleur de ce div en cliquant sur le boutton !!!
+        </div>
+        <button class="btn btn-warning mx-5" (click)="isClassVisible = !isClassVisible;"  >
+            Changer le style
+        </button>
+    </div>
+   
 </div>
